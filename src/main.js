@@ -1,5 +1,5 @@
 import { refs } from './js/refs';
-import { addTask } from './js/tasks';
+import { addTask, initTasks } from './js/tasks';
 
 /*
   Створи список справ.
@@ -17,4 +17,6 @@ import { addTask } from './js/tasks';
       <p>Текст</p>
   </li>
 */
+initTasks();
+
 refs.form.addEventListener('submit', addTask);
