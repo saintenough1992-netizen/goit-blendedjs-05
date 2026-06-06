@@ -3,7 +3,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { taskRender } from './render-tasks';
 import { saveData, SaveDataFromLS, TASKS_LS_KEY } from './local-storage-api';
 
-const dataTasks = SaveDataFromLS(TASKS_LS_KEY) || [];
+let dataTasks = SaveDataFromLS(TASKS_LS_KEY) || [];
 
 export function addTask(e) {
   e.preventDefault();
@@ -28,5 +28,15 @@ export function addTask(e) {
 }
 
 export function initTasks() {
-  taskRender(dataTasks)
+  taskRender(dataTasks);
+}
+
+export function deleteTasks(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  const titleToDelete = e.target.nextElementSibling.textContent;
+  dataTasks = dataTasks.filter(task => task.title !== titleToDelete);
+  taskRender(dataTasks);
+  saveData(TASKS_LS_KEY, dataTasks);
 }
