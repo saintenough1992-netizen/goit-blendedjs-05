@@ -1,3 +1,6 @@
+import { refs } from './js/refs';
+import { addTask } from './js/tasks';
+
 /*
   Створи список справ.
   На сторінці є два інпути які має вводиться назва і текст задачі.
@@ -14,3 +17,4 @@
       <p>Текст</p>
   </li>
 */
+refs.form.addEventListener('submit', addTask);
