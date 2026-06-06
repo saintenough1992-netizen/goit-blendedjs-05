@@ -3,7 +3,7 @@ export function saveData(key, value) {
 }
 
 export const TASKS_LS_KEY = 'tasks';
-
+export const THEME_LS_KEY = 'theme';
 export function SaveDataFromLS(key) {
   const saveD = localStorage.getItem(key);
   if (!saveD) {
