@@ -1,5 +1,6 @@
 import { refs } from './js/refs';
 import { addTask, deleteTasks, initTasks } from './js/tasks';
+import { changeTheme, initTheme } from './js/theme-switcher';
 
 /*
   Створи список справ.
@@ -17,7 +18,9 @@ import { addTask, deleteTasks, initTasks } from './js/tasks';
       <p>Текст</p>
   </li>
 */
+initTheme();
 initTasks();
 
 refs.form.addEventListener('submit', addTask);
 refs.taskList.addEventListener('click', deleteTasks);
+refs.btnThemeToggle.addEventListener('click', changeTheme);
