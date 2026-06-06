@@ -1,9 +1,9 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { taskRender } from './render-tasks';
-import { saveData, TASKS_LS_KEY } from './local-storage-api';
+import { saveData, SaveDataFromLS, TASKS_LS_KEY } from './local-storage-api';
 
-const dataTasks = [];
+const dataTasks = SaveDataFromLS(TASKS_LS_KEY) || [];
 
 export function addTask(e) {
   e.preventDefault();
@@ -25,4 +25,8 @@ export function addTask(e) {
   taskRender(dataTasks);
   saveData(TASKS_LS_KEY, dataTasks);
   e.target.reset();
+}
+
+export function initTasks() {
+  taskRender(dataTasks)
 }
