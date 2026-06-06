@@ -1,13 +1,11 @@
 {
-  "name": "goit-blendedjs-05
-",
+  "name": "goit-blendedjs-05",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/goit-blendedjs-05
-/",
+    "build": "vite build --base=/goit-blendedjs-05/",
     "preview": "vite preview"
   },
   "devDependencies": {
