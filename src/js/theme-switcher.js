@@ -13,7 +13,7 @@ export function changeTheme() {
 }
 
 export function initTheme() {
-  const theme = JSON.parse(localStorage.getItem(THEME_LS_KEY)) || 'light';
+  const theme = JSON.parse(localStorage.getItem(THEME_LS_KEY)) || 'theme-dark';
 
   body.classList.remove('theme-light', 'theme-dark');
   body.classList.add(theme);
